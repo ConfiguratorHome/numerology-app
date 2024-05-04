@@ -1,13 +1,7 @@
 "use client";
 
-import { useParams } from "next/navigation";
-
 function PageNumberDetail() {
-  const params = useParams<{
-    numberId: string;
-  }>();
-
-  const NumberId = params.numberId;
+  const NumberId = 1;
 
   return (
     <div className="flex flex-col w-full h-full p-10">
