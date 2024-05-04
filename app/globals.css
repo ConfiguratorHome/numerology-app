@@ -96,5 +96,31 @@ select::-ms-expand {
   display: none;
 }
 
+.effective-number {
+  .missing {
+      @apply !relative w-full m-auto h-[1000px] border border-solid border-[#FF0101] rounded-3xl bg-[#FF0101] bg-opacity-5;
+
+      .header-top {
+          @apply absolute -top-4 left-10 py-2 px-4 rounded-3xl bg-[#FF0101]
+      }
+
+      .header-bottom {
+          @apply absolute -bottom-4 right-10 py-2 px-4 rounded-3xl bg-[#FF0101]
+      }
+  }
+
+  .avalable {
+      @apply !relative w-full m-auto h-[1000px] border border-solid border-[#69F0AE] rounded-3xl bg-[#69F0AE] bg-opacity-5;
+
+      .header-top {
+          @apply absolute -top-4 left-10 py-2 px-4 rounded-3xl bg-[#69F0AE] text-primary-900
+      }
+
+      .header-bottom {
+          @apply absolute -bottom-4 right-10 py-2 px-4 rounded-3xl bg-[#69F0AE] text-primary-900
+      }
+  }
+}
+
 
 

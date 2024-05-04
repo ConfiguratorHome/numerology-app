@@ -11,6 +11,7 @@ import { setUserName } from "@/lib/features/user-info/userSlice";
 export default function Home() {
   const userInfo = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch(); //
+  const [loaded, setLoaded] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -23,6 +24,7 @@ export default function Home() {
 
     console.log(formData);
     dispatch(setUserName(formData.name));
+    setLoaded(true);
   }
 
   return (

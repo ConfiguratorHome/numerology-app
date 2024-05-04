@@ -1,6 +1,5 @@
 import NumberSeeDetail from "../number-see-detail";
 import PatternNumber from "../pattern-number";
-import "./style.css";
 
 export enum Effective {
   MISSING,
