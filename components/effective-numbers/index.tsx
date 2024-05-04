@@ -1,15 +1,25 @@
 import NumberSeeDetail from "../number-see-detail";
 import PatternNumber from "../pattern-number";
+import "./style.css";
 
-function EffectiveNumbers() {
+export enum Effective {
+  MISSING,
+  AVAILABLE,
+}
+
+function EffectiveNumbers({ effective }: { effective: Effective }) {
   return (
-    <div className="p-10 w-full h-full">
-      <div className="relative w-full m-auto h-[1000px] border border-solid border-[#FF0101] rounded-3xl bg-[#FF0101] bg-opacity-5">
-        <div className="absolute -top-4 left-10 py-2 px-4 rounded-3xl  bg-[#FF0101]">
-          Missing Number
+    <div className="p-10 w-full h-full effective-number">
+      <div className={effective === Effective.MISSING ? "missing" : "avalable"}>
+        <div className={"header-top"}>
+          {effective === Effective.MISSING
+            ? "Missing Number"
+            : "Avalable Number"}{" "}
         </div>
-        <div className="absolute -bottom-4 right-10 py-2 px-4 rounded-3xl  bg-[#FF0101]">
-          Missing Number
+        <div className={"header-bottom "}>
+          {effective === Effective.MISSING
+            ? "Missing Number"
+            : "Avalable Number"}
         </div>
         <div className="p-20">
           <div className="flex p-5 w-full border-3 space-x-14 border-primary-900 rounded-3xl bg-primary-100">

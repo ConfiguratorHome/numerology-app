@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { FormEvent, useState } from "react";
-import TextNumberCard from "./components/text-number-card";
-import EffectiveNumbers from "./components/effective-numbers";
+import TextNumberCard from "./../components/text-number-card";
+import EffectiveNumbers, { Effective } from "./../components/effective-numbers";
 import { prefix } from "./prefix";
 
 export default function Home() {
@@ -147,8 +147,8 @@ export default function Home() {
           </div>
         </div>
       )}
-      {calculated && <EffectiveNumbers />}
-      {calculated && <EffectiveNumbers />}
+      {calculated && <EffectiveNumbers effective={Effective.MISSING} />}
+      {calculated && <EffectiveNumbers effective={Effective.AVAILABLE} />}
     </main>
   );
 }
