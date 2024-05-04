@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
+import { prefix } from "./prefix";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  console.log("prefix ", prefix);
+
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -22,15 +25,14 @@ export default function RootLayout({
           <div className="flex items-center space-x-1 pr-5">
             <Image
               className="h-fit"
-              src="/icons/english-icon.png"
+              src={`${prefix}/icons/english-icon.png`}
               alt="language"
               width={18}
               height={18}
-              unoptimized
             />
             <div>English</div>
             <Image
-              src="/icons/teenyicons_down-solid.png"
+              src={`${prefix}/icons/teenyicons_down-solid.png`}
               alt="down"
               width={15}
               height={15}

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FormEvent, useState } from "react";
 import TextNumberCard from "./components/text-number-card";
 import EffectiveNumbers from "./components/effective-numbers";
+import { prefix } from "./prefix";
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -74,8 +75,9 @@ export default function Home() {
             onChange={(e) => {
               setFormData((pre) => ({ ...pre, gender: e.target.value }));
             }}
+            defaultValue={""}
           >
-            <option disabled selected hidden>
+            <option value="" disabled selected hidden>
               Select Gender...
             </option>
             <option value="male">Male</option>
@@ -87,7 +89,7 @@ export default function Home() {
         </form>
         <div className="h-full flex items-end ">
           <Image
-            src="/icons/six-icon-bg.png"
+            src={`${prefix}/icons/six-icon-bg.png`}
             alt=""
             width={157}
             height={157}
@@ -100,7 +102,7 @@ export default function Home() {
           </div>
           <Image
             className="z-10"
-            src="../icons/wall-stump.png"
+            src={`${prefix}/icons/wall-stump.png`}
             alt=""
             width={414}
             height={414}
@@ -136,7 +138,7 @@ export default function Home() {
             </div>
             <Image
               alt=""
-              src="/icons/jyotish.png"
+              src={`${prefix}/icons/jyotish.png`}
               width={400}
               height={400}
               className="z-10"
