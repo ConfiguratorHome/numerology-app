@@ -86,7 +86,13 @@ export default function Home() {
           </button>
         </form>
         <div className="h-full flex items-end ">
-          <Image src="/icons/six-icon-bg.png" alt="" width={157} height={157} />
+          <Image
+            src="/icons/six-icon-bg.png"
+            alt=""
+            width={157}
+            height={157}
+            unoptimized
+          />
         </div>
         <div className="relative flex items-center justify-center">
           <div className="absolute">
@@ -98,6 +104,7 @@ export default function Home() {
             alt=""
             width={414}
             height={414}
+            unoptimized
           />
         </div>
       </div>
@@ -133,6 +140,7 @@ export default function Home() {
             width={400}
             height={400}
             className="z-10"
+            unoptimized
           />
         </div>
       </div>

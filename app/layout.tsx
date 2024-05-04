@@ -26,9 +26,16 @@ export default function RootLayout({
               alt="language"
               width={18}
               height={18}
+              unoptimized
             />
             <div>English</div>
-            <Image src="/icons/teenyicons_down-solid.png" alt="down" width={15} height={15}/>
+            <Image
+              src="/icons/teenyicons_down-solid.png"
+              alt="down"
+              width={15}
+              height={15}
+              unoptimized
+            />
           </div>
         </nav>
         {children}
