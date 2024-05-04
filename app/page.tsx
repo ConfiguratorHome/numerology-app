@@ -80,7 +80,7 @@ export default function Home() {
             }}
             defaultValue={""}
           >
-            <option value="" disabled selected hidden>
+            <option value="" disabled hidden>
               Select Gender...
             </option>
             <option value="male">Male</option>

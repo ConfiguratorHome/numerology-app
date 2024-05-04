@@ -10,12 +10,24 @@ function EffectiveNumbers({ effective }: { effective: Effective }) {
   return (
     <div className="p-10 w-full h-full effective-number">
       <div className={effective === Effective.MISSING ? "missing" : "avalable"}>
-        <div className={"header-top"}>
+        <div
+          className={
+            effective === Effective.MISSING
+              ? "missing--header-top"
+              : "avalable--header-top"
+          }
+        >
           {effective === Effective.MISSING
             ? "Missing Number"
-            : "Avalable Number"}{" "}
+            : "Avalable Number"}
         </div>
-        <div className={"header-bottom "}>
+        <div
+          className={
+            effective === Effective.MISSING
+              ? "missing--header-bottom"
+              : "avalable--header-bottom"
+          }
+        >
           {effective === Effective.MISSING
             ? "Missing Number"
             : "Avalable Number"}

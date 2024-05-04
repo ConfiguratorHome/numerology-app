@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "./globals.scss";
 import Image from "next/image";
 import { prefix } from "./prefix";
 import StoreProvider from "./StoreProvider";
