@@ -1,36 +1,37 @@
 "use client";
 
 import Image from "next/image";
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import TextNumberCard from "./../components/text-number-card";
 import EffectiveNumbers, { Effective } from "./../components/effective-numbers";
 import { prefix } from "./prefix";
+import { useAppDispatch, useAppSelector, useAppStore } from "@/lib/hooks";
+import { setUserName } from "@/lib/features/user-info/userSlice";
 
 export default function Home() {
+  const userInfo = useAppSelector((state) => state.user);
+  const dispatch = useAppDispatch(); //
+
   const [formData, setFormData] = useState({
     name: "",
     dob: "",
     gender: "",
   });
 
-  const [calculated, setCalculated] = useState<{ name: string }>();
-
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     console.log(formData);
-    setCalculated({ name: formData.name });
+    dispatch(setUserName(formData.name));
   }
 
   return (
     <main className="flex flex-col items-center justify-between p-10 bg-secondary-900">
-      {calculated ? (
+      {userInfo.name ? (
         <div className="flex flex-col w-full max-w-2xl items-center justify-center">
           <div className="flex heading p-2">
             {" "}
-            Hello, <div className="text-primary-200">
-              {calculated?.name}
-            </div>{" "}
+            Hello, <div className="text-primary-200">{userInfo.name}</div>{" "}
           </div>
           <div className="paragraph">
             Here is all the information related to your life
@@ -110,7 +111,7 @@ export default function Home() {
           />
         </div>
       </div>
-      {calculated && (
+      {userInfo.name && (
         <div className="flex w-full items-center justify-center py-16">
           <div className="relative">
             <div className="absolute w-full h-full flex items-center justify-center">
@@ -147,8 +148,8 @@ export default function Home() {
           </div>
         </div>
       )}
-      {calculated && <EffectiveNumbers effective={Effective.MISSING} />}
-      {calculated && <EffectiveNumbers effective={Effective.AVAILABLE} />}
+      {userInfo.name && <EffectiveNumbers effective={Effective.MISSING} />}
+      {userInfo.name && <EffectiveNumbers effective={Effective.AVAILABLE} />}
     </main>
   );
 }
