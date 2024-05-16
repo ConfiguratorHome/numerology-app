@@ -1,5 +1,6 @@
 import NumberSeeDetail from "../number-see-detail";
 import PatternNumber from "../pattern-number";
+import "./style.css";
 
 export enum Effective {
   MISSING,
@@ -8,7 +9,7 @@ export enum Effective {
 
 function EffectiveNumbers({ effective }: { effective: Effective }) {
   return (
-    <div className="p-10 w-full h-full effective-number">
+    <div className="px-0 p-8 md:p-3 lg:p-10 w-full h-full effective-number">
       <div className={effective === Effective.MISSING ? "missing" : "avalable"}>
         <div
           className={
@@ -32,9 +33,9 @@ function EffectiveNumbers({ effective }: { effective: Effective }) {
             ? "Missing Number"
             : "Avalable Number"}
         </div>
-        <div className="p-20">
-          <div className="flex p-5 w-full border-3 space-x-14 border-primary-900 rounded-3xl bg-primary-100">
-            <div className="flex-none p-8 h-full w-96 space-y-5 bg-primary-900 rounded-3xl">
+        <div className="px-8 py-12 lg:p-20 md:p-12">
+          <div className="flex flex-col lg:flex-row px-5 p-8 w-full border-3 space-x-0 space-y-14 lg:space-x-14 lg:space-y-0 border-primary-900 rounded-3xl bg-primary-100">
+            <div className="flex-col p-8 h-full w-full lg:w-96 space-y-5 bg-primary-900 rounded-3xl">
               <div className="text-2xl font-extrabold">
                 These numbers are missing from your Luo Shu grid chart.
               </div>
@@ -45,27 +46,22 @@ function EffectiveNumbers({ effective }: { effective: Effective }) {
               </div>
             </div>
 
-            <div className="flex-col w-full space-y-20 items-center justify-center">
-              <div className="flex w-full space-x-10 justify-center">
-                <NumberSeeDetail number={1} />
-                <NumberSeeDetail number={2} />
-                <NumberSeeDetail number={3} />
-                <NumberSeeDetail number={4} />
-              </div>
-              <div className="flex w-full space-x-10 justify-center">
-                <NumberSeeDetail number={5} />
-                <NumberSeeDetail number={6} />
-                <NumberSeeDetail number={7} />
-                <NumberSeeDetail number={8} />
-                <NumberSeeDetail number={9} />
-              </div>
+            <div className="inline-grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 flex-col w-full items-center justify-items-center">
+              <NumberSeeDetail number={1} />
+              <NumberSeeDetail number={2} />
+              <NumberSeeDetail number={5} />
+              <NumberSeeDetail number={6} />
+              <NumberSeeDetail number={1} />
+              <NumberSeeDetail number={2} />
+              <NumberSeeDetail number={5} />
+              <NumberSeeDetail number={6} />
             </div>
           </div>
 
-          <div className="text-5xl font-semibold pt-20 pb-10">
+          <div className="text-3xl lg:text-5xl font-semibold pt-20 pb-10">
             This pattern is missing from your life
           </div>
-          <div className="w-full grid grid-cols-4 gap-5">
+          <div className="inline-grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-16 flex-col w-full items-center justify-items-center">
             <PatternNumber />
             <PatternNumber />
             <PatternNumber />

@@ -23,23 +23,6 @@ body {
   }
 }
 
-.heading {
-  font-family: Inter;
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 50.83px;
-  text-align: center;
-}
-
-.paragraph {
-  font-family: Inter;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 21.78px;
-  text-align: center;
-}
-
-
 .submit-button {
   width: 100%;
   height: 60px;
@@ -93,27 +76,10 @@ select::-ms-expand {
   display: none;
 }
 
-.effective-number {
-  .missing {
-    @apply !relative w-full m-auto h-[1000px] border border-solid border-[#FF0101] rounded-3xl bg-[#FF0101] bg-opacity-5;    
-  }
-  .missing--header-top {
-    @apply absolute -top-4 left-10 py-2 px-4 rounded-3xl bg-[#FF0101]
-  }
+.main-page-title {
+  @apply flex text-xl md:text-4xl font-bold text-center p-2;
+}
 
-  .missing--header-bottom {
-    @apply absolute -bottom-4 right-10 py-2 px-4 rounded-3xl bg-[#FF0101]
-  }
-
-  .avalable {
-    @apply !relative w-full m-auto h-[1000px] border border-solid border-[#69F0AE] rounded-3xl bg-[#69F0AE] bg-opacity-5;  
-  }
-
-  .avalable--header-top {
-    @apply absolute -top-4 left-10 py-2 px-4 rounded-3xl bg-[#69F0AE] text-primary-900
-  }
-
-  .avalable--header-bottom {
-    @apply absolute -bottom-4 right-10 py-2 px-4 rounded-3xl bg-[#69F0AE] text-primary-900
-  }
+.main-page-description {
+  @apply text-sm md:text-lg font-normal md:font-medium text-center;
 }

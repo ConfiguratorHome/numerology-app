@@ -1,6 +1,6 @@
 function PatternNumber() {
   return (
-    <div className="flex  bg-primary-900 rounded-3xl p-3">
+    <div className="flex w-80 bg-primary-900 rounded-3xl p-3">
       <div className="flex-none w-32 rounded-3xl bg-primary-100 text-primary-900 text-2xl font-extrabold ">
         <div className="flex items-center justify-center w-full h-full">
           4-5-6
