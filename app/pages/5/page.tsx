@@ -4,13 +4,11 @@ function PageNumberDetail() {
   const NumberId = 5;
 
   return (
-    <div className="flex flex-col w-full h-full p-10">
-      <div className="flex w-full items-center justify-center py-10">
-        <div className="flex w-52 h-52 rounded-full bg-primary-900 items-center justify-center text-7xl font-extrabold">
-          {NumberId}
-        </div>
+    <div className="number-page-full">
+      <div className="number-page-header">
+        <div className="number-page-ball">{NumberId}</div>
       </div>
-      <div className="px-16 mx-auto flex-col space-y-5">
+      <div className="number-page-details">
         <p>
           In your life, the number 1 holds significance in various aspects such
           as career, success, job, business, communication, and personality.

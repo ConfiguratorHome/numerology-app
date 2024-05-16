@@ -1,0 +1,15 @@
+.number-page-full {
+    @apply flex flex-col w-full h-full lg:p-10 md:p-0; 
+}
+
+.number-page-header {
+    @apply flex w-full items-center justify-center md:py-10 py-6;
+}
+
+.number-page-ball {
+    @apply flex w-52 h-52 rounded-full bg-primary-900 items-center justify-center text-7xl font-extrabold;
+}
+
+.number-page-details {
+    @apply mx-auto flex-col space-y-5 px-4 md:px-10 lg:px-16;
+}
