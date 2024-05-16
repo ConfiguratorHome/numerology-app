@@ -33,7 +33,7 @@ function EffectiveNumbers({ effective }: { effective: Effective }) {
             ? "Missing Number"
             : "Avalable Number"}
         </div>
-        <div className="px-8 py-12 lg:p-20 md:p-12">
+        <div className="px-2 py-12 lg:p-20 md:p-12">
           <div className="flex flex-col lg:flex-row px-5 p-8 w-full border-3 space-x-0 space-y-14 lg:space-x-14 lg:space-y-0 border-primary-900 rounded-3xl bg-primary-100">
             <div className="flex-col p-8 h-full w-full lg:w-96 space-y-5 bg-primary-900 rounded-3xl">
               <div className="text-2xl font-extrabold">
@@ -45,7 +45,6 @@ function EffectiveNumbers({ effective }: { effective: Effective }) {
                 on your life. Also, you will get to know their remedy.
               </div>
             </div>
-
             <div className="inline-grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 flex-col w-full items-center justify-items-center">
               <NumberSeeDetail number={1} />
               <NumberSeeDetail number={2} />

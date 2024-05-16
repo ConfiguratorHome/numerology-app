@@ -7,6 +7,7 @@ import EffectiveNumbers, { Effective } from "./../components/effective-numbers";
 import { prefix } from "./prefix";
 import { useAppDispatch, useAppSelector, useAppStore } from "@/lib/hooks";
 import { setUserName } from "@/lib/features/user-info/userSlice";
+import JyotishBabaComponent from "@/components/jyotish-baba";
 
 export default function Home() {
   const userInfo = useAppSelector((state) => state.user);
@@ -25,10 +26,16 @@ export default function Home() {
     console.log(formData);
     dispatch(setUserName(formData.name));
     setLoaded(true);
+    const element = document.getElementById("jyotish-baba");
+    element?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
   }
 
   return (
-    <main className="flex flex-col items-center justify-between p-10 bg-secondary-900">
+    <main className="flex flex-col items-center justify-between p-1 sm:p-10 bg-secondary-900">
       {userInfo.name ? (
         <div className="flex flex-col w-full max-w-2xl items-center justify-center">
           <div className="main-page-title">
@@ -107,43 +114,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {userInfo.name && (
-        <div className="flex w-full items-center justify-center py-16">
-          <div className="relative">
-            <div className="absolute w-full h-full flex items-center justify-center">
-              <div className="flex-none border-2 border-solid border-primary-800 rounded-full justify-center  w-[446px] h-[446px]  bg-transparent "></div>
-            </div>
-            <div className="absolute w-full h-full flex items-center justify-center bg-transparent ">
-              <div className="grid grid-cols-2 shrink-0 w-[480px] h-[446px]   ">
-                <TextNumberCard text="Bhagyank" number={6} />
-                <TextNumberCard
-                  text="Kua Number"
-                  number={6}
-                  className="justify-self-end"
-                />
-                <TextNumberCard
-                  text="Moolank"
-                  number={6}
-                  className="content-end"
-                />
-                <TextNumberCard
-                  text="Name Numerology Total"
-                  number={6}
-                  className="justify-self-end content-end"
-                />
-              </div>
-            </div>
-            <Image
-              alt=""
-              src={`${prefix}/icons/jyotish.png`}
-              width={400}
-              height={400}
-              className="z-10"
-              unoptimized
-            />
-          </div>
-        </div>
-      )}
+      {userInfo.name && <JyotishBabaComponent />}
       {userInfo.name && <EffectiveNumbers effective={Effective.MISSING} />}
       {userInfo.name && <EffectiveNumbers effective={Effective.AVAILABLE} />}
     </main>
