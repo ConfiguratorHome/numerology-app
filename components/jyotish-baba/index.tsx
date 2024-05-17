@@ -36,26 +36,18 @@ function JyotishBabaComponent() {
           className="z-10"
           unoptimized
         />
-        <div className="sm:hidden block py-8 space-y-3 justify-items-center w-full">
-          <TextNumberCard
-            text="Bhagyank"
-            number={6}
-            className="flex justify-center"
-          />
+        <div className="sm:hidden py-8 space-y-3 space-x-3 w-full ">
+          <TextNumberCard text="Bhagyank" number={6} className="inline-block" />
           <TextNumberCard
             text="Kua Number"
             number={6}
-            className="flex justify-center"
+            className="inline-block"
           />
-          <TextNumberCard
-            text="Moolank"
-            number={6}
-            className="flex justify-center"
-          />
+          <TextNumberCard text="Moolank" number={6} className="inline-block" />
           <TextNumberCard
             text="Name Numerology Total"
             number={6}
-            className="flex justify-center"
+            className="inline-block"
           />
         </div>
       </div>

@@ -26,12 +26,14 @@ export default function Home() {
     console.log(formData);
     dispatch(setUserName(formData.name));
     setLoaded(true);
-    const element = document.getElementById("jyotish-baba");
-    element?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
-    });
+    setTimeout(() => {
+      const element = document.getElementById("jyotish-baba");
+      element?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    }, 1000);
   }
 
   return (
